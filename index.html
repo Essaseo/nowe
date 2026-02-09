@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kancelaria Notarialna Agata Kret-Paprocka w Rzeszowie. Akty notarialne, poświadczenia dziedziczenia, umowy sprzedaży nieruchomości. ul. 3 Maja 11/12, centrum Rzeszowa.">
+  <meta name="theme-color" content="#1a2332">
+  <title>Notariusz Rzeszów — Kancelaria Notarialna Agata Kret-Paprocka</title>
+
+  <!-- Preload critical font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       CSS RESET & BASE — Mobile First, CWV-safe
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand palette — elegant, trust-evoking navy + warm gold */
+      --navy:       #1a2332;
+      --navy-light: #243044;
+      --navy-dark:  #111820;
+      --gold:       #c9a84c;
+      --gold-light: #e0c76a;
+      --gold-dark:  #a88a32;
+      --cream:      #faf8f4;
+      --cream-dark: #f0ece4;
+      --white:      #ffffff;
+      --gray-100:   #f5f5f5;
+      --gray-200:   #e8e8e8;
+      --gray-400:   #999;
+      --gray-600:   #666;
+      --gray-800:   #333;
+      --text:       #2c2c2c;
+      --text-light: #5a5a5a;
+
+      /* Typography scale */
+      --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      /* Spacing */
+      --section-py: clamp(3.5rem, 8vw, 7rem);
+      --container:  min(90%, 1200px);
+
+      /* Transitions */
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* Focus states — A11y */
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .container { width: var(--container); margin: 0 auto; }
+
+    /* ============================================
+       SKIP LINK — A11y
+       ============================================ */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 6px 6px;
+      font-weight: 600;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ============================================
+       HEADER / NAV — Classic, predictable
+       ============================================ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(26, 35, 50, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      transition: box-shadow 0.3s var(--ease);
+    }
+    .header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    /* Logo — text-based, SVG accent */
+    .logo { display: flex; align-items: center; gap: 0.75rem; }
+    .logo__icon {
+      width: 44px; height: 44px;
+      flex-shrink: 0;
+    }
+    .logo__text { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo__name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .logo__sub {
+      font-size: 0.7rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+    }
+
+    /* Desktop nav */
+    .nav { display: none; align-items: center; gap: 2rem; }
+    .nav a {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.3s var(--ease);
+    }
+    .nav a:hover { color: var(--white); }
+    .nav a:hover::after { width: 100%; }
+
+    .nav__cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav__cta::after { display: none !important; }
+    .nav__cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s var(--ease);
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile nav */
+    .mobile-nav {
+      position: fixed;
+      top: 0; right: -100%;
+      width: min(320px, 85vw);
+      height: 100vh;
+      background: var(--navy-dark);
+      padding: 5rem 2rem 2rem;
+      transition: right 0.35s var(--ease);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav a {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .mobile-nav a:hover { color: var(--gold); padding-left: 0.5rem; }
+    .mobile-nav__cta {
+      margin-top: 1rem;
+      background: var(--gold);
+      color: var(--navy) !important;
+      text-align: center;
+      padding: 0.8rem;
+      border-radius: 6px;
+      font-weight: 600;
+      border-bottom: none !important;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 998;
+    }
+    .overlay.active { opacity: 1; pointer-events: all; }
+
+    @media (min-width: 768px) {
+      .nav { display: flex; }
+      .hamburger { display: none; }
+    }
+
+    /* ============================================
+       HERO — Clarity first: co + dla kogo + CTA
+       ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy);
+      overflow: hidden;
+    }
+
+    /* Subtle geometric pattern — no heavy images */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image:
+        linear-gradient(30deg, var(--gold) 12%, transparent 12.5%, transparent 87%, var(--gold) 87.5%, var(--gold)),
+        linear-gradient(150deg, var(--gold) 12%, transparent 12.5%, transparent 87%, var(--gold) 87.5%, var(--gold)),
+        linear-gradient(30deg, var(--gold) 12%, transparent 12.5%, transparent 87%, var(--gold) 87.5%, var(--gold)),
+        linear-gradient(150deg, var(--gold) 12%, transparent 12.5%, transparent 87%, var(--gold) 87.5%, var(--gold)),
+        linear-gradient(60deg, rgba(201,168,76,0.5) 25%, transparent 25.5%, transparent 75%, rgba(201,168,76,0.5) 75%, rgba(201,168,76,0.5)),
+        linear-gradient(60deg, rgba(201,168,76,0.5) 25%, transparent 25.5%, transparent 75%, rgba(201,168,76,0.5) 75%, rgba(201,168,76,0.5));
+      background-size: 80px 140px;
+      background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    }
+
+    /* Gradient overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,35,50,0.95) 0%, rgba(26,35,50,0.8) 50%, rgba(36,48,68,0.9) 100%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: var(--container);
+      margin: 0 auto;
+      padding: 7rem 0 4rem;
+      max-width: 720px;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+    .hero__badge svg { width: 14px; height: 14px; }
+
+    .hero__h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .hero__h1 span { color: var(--gold); }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 560px;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+      text-decoration: none;
+    }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .btn--primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn--primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .btn--outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* Hero trust strip */
+    .hero__trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero__trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+    }
+    .hero__trust-item svg {
+      width: 18px; height: 18px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       SECTION: Kluczowe korzyści (Bento Grid)
+       ============================================ */
+    .benefits {
+      padding: var(--section-py) 0;
+      background: var(--cream);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold-dark);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .section-subtitle {
+      margin-top: 0.75rem;
+      font-size: 1rem;
+      color: var(--text-light);
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .bento {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .bento__card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.75rem;
+      border: 1px solid var(--gray-200);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .bento__card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--gold);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s var(--ease);
+    }
+    .bento__card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+    .bento__card:hover::before { transform: scaleY(1); }
+
+    .bento__icon {
+      width: 48px; height: 48px;
+      background: rgba(201, 168, 76, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--gold-dark);
+    }
+    .bento__icon svg { width: 24px; height: 24px; }
+
+    .bento__title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .bento__text {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 640px) {
+      .bento { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 960px) {
+      .bento { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ============================================
+       SECTION: Usługi (Services Bento)
+       ============================================ */
+    .services {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .service-card {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 1.75rem;
+      border: 1px solid transparent;
+      transition: all 0.3s var(--ease);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    }
+
+    .service-card__icon {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+    .service-card__icon svg { width: 22px; height: 22px; }
+
+    .service-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .service-card__text {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    .service-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold-dark);
+      margin-top: 1rem;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .service-card__link:hover { gap: 0.6rem; color: var(--navy); }
+    .service-card__link svg { width: 16px; height: 16px; }
+
+    @media (min-width: 640px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 960px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ============================================
+       SECTION: O kancelarii (About)
+       ============================================ */
+    .about {
+      padding: var(--section-py) 0;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .about__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .about__text {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about__stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .stat {
+      text-align: center;
+      padding: 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .stat__number {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat__label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.4rem;
+    }
+
+    /* Photo placeholder */
+    .about__photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--navy-light);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: rgba(255,255,255,0.25);
+    }
+    .about__photo svg { width: 48px; height: 48px; }
+    .about__photo span { font-size: 0.8rem; }
+
+    @media (min-width: 768px) {
+      .about__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ============================================
+       SECTION: Opinie (Testimonials)
+       ============================================ */
+    .testimonials {
+      padding: var(--section-py) 0;
+      background: var(--cream);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .testimonial {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.75rem;
+      border: 1px solid var(--gray-200);
+      position: relative;
+    }
+    .testimonial__stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+    .testimonial__stars svg { width: 16px; height: 16px; }
+    .testimonial__text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .testimonial__author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray-600);
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ============================================
+       SECTION: Godziny + Kontakt
+       ============================================ */
+    .contact {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    /* Hours */
+    .hours {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .hours__title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+    .hours__row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 0.9rem;
+    }
+    .hours__row:last-child { border-bottom: none; }
+    .hours__day { font-weight: 500; color: var(--navy); }
+    .hours__time { color: var(--text-light); }
+    .hours__note {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      padding: 0.75rem;
+      background: rgba(201, 168, 76, 0.08);
+      border-radius: 8px;
+      border-left: 3px solid var(--gold);
+    }
+
+    /* Contact info cards */
+    .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--cream);
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+    .contact-card:hover { transform: translateX(4px); }
+    .contact-card__icon {
+      width: 42px; height: 42px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+    .contact-card__icon svg { width: 20px; height: 20px; }
+    .contact-card__label {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+    .contact-card__value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .contact-card__value a { transition: color 0.2s; }
+    .contact-card__value a:hover { color: var(--gold-dark); }
+
+    /* Contact form — minimal fields */
+    .form-section {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 2rem;
+      color: var(--white);
+    }
+    .form-section__title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .form-section__sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option { background: var(--navy); color: var(--white); }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .btn--submit {
+      width: 100%;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.9rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+    }
+    .btn--submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 168, 76, 0.3);
+    }
+
+    @media (min-width: 640px) {
+      .form-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 960px) {
+      .contact__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ============================================
+       SECTION: Map
+       ============================================ */
+    .map-section {
+      position: relative;
+      background: var(--cream);
+    }
+    .map-section__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .map-section__info {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .map-section__title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .map-section__address {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .map-section__parking {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      padding: 1rem;
+      background: var(--white);
+      border-radius: 10px;
+    }
+    .map-section__parking strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .map-embed {
+      width: 100%;
+      min-height: 350px;
+      border: none;
+    }
+
+    @media (min-width: 768px) {
+      .map-section__inner { grid-template-columns: 380px 1fr; }
+      .map-embed { min-height: 420px; }
+    }
+
+    /* ============================================
+       FAQ — Quick answers (AI-alternative)
+       ============================================ */
+    .faq {
+      padding: var(--section-py) 0;
+      background: var(--white);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover { border-color: var(--gold); }
+
+    .faq-item__q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 1.1rem 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: left;
+      gap: 1rem;
+    }
+    .faq-item__q svg {
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+      color: var(--gold-dark);
+      transition: transform 0.3s var(--ease);
+    }
+    .faq-item.open .faq-item__q svg { transform: rotate(180deg); }
+
+    .faq-item__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s var(--ease), padding 0.35s;
+    }
+    .faq-item.open .faq-item__a {
+      max-height: 300px;
+    }
+    .faq-item__a-inner {
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       CTA Banner
+       ============================================ */
+    .cta-banner {
+      padding: 3.5rem 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      text-align: center;
+      color: var(--white);
+    }
+    .cta-banner__title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .cta-banner__sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+    .cta-banner__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.5);
+      padding: 3rem 0 1.5rem;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer__brand .logo { margin-bottom: 1rem; }
+    .footer__text {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      max-width: 300px;
+    }
+
+    .footer__heading {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.75rem;
+    }
+    .footer__links a {
+      display: block;
+      font-size: 0.85rem;
+      padding: 0.3rem 0;
+      transition: color 0.2s;
+    }
+    .footer__links a:hover { color: var(--gold); }
+
+    .footer__bottom {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer__grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+    }
+
+    /* ============================================
+       SCROLL ANIMATIONS — Purposeful, subtle
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered children */
+    .reveal-stagger > .reveal {
+      transition-delay: calc(var(--i, 0) * 0.08s);
+    }
+
+    /* ============================================
+       UTILITIES
+       ============================================ */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link — A11y -->
+  <a href="#main" class="skip-link">Przejdź do treści</a>
+
+  <!-- ========================================
+       HEADER
+       ======================================== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="/" class="logo" aria-label="Strona główna — Kancelaria Notarialna Agata Kret-Paprocka">
+        <!-- SVG Logo: Stylized notarial seal -->
+        <svg class="logo__icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="22" cy="22" r="20" stroke="#c9a84c" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="15" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
+          <path d="M22 10 L22 34" stroke="#c9a84c" stroke-width="1.2"/>
+          <path d="M16 16 L22 10 L28 16" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
+          <path d="M15 28 L29 28" stroke="#c9a84c" stroke-width="1"/>
+          <path d="M17 31 L27 31" stroke="#c9a84c" stroke-width="0.8"/>
+          <text x="22" y="24" text-anchor="middle" fill="#c9a84c" font-family="serif" font-size="6" font-weight="bold">N</text>
+        </svg>
+        <div class="logo__text">
+          <span class="logo__name">Agata Kret-Paprocka</span>
+          <span class="logo__sub">Kancelaria Notarialna</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Menu główne">
+        <a href="#uslugi">Usługi</a>
+        <a href="#o-kancelarii">O kancelarii</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="tel:+48880460333" class="nav__cta">Zadzwoń</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" aria-label="Menu mobilne" aria-hidden="true">
+    <a href="#uslugi">Usługi</a>
+    <a href="#o-kancelarii">O kancelarii</a>
+    <a href="#opinie">Opinie</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:+48880460333" class="mobile-nav__cta">Zadzwoń: 880 460 333</a>
+  </nav>
+  <div class="overlay" aria-hidden="true"></div>
+
+  <!-- ========================================
+       MAIN
+       ======================================== -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__content">
+        <div class="hero__badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          Laureat Orły Prawa — Rzeszów
+        </div>
+
+        <h1 class="hero__h1">
+          Kancelaria Notarialna<br>
+          <span>w&nbsp;centrum Rzeszowa</span>
+        </h1>
+
+        <p class="hero__sub">
+          Notariusz Agata Kret-Paprocka — profesjonalna obsługa czynności notarialnych
+          z&nbsp;indywidualnym podejściem do każdego Klienta. Bezpieczeństwo obrotu
+          i&nbsp;ochrona Twoich interesów.
+        </p>
+
+        <div class="hero__actions">
+          <a href="tel:+48880460333" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Zadzwoń: 880 460 333
+          </a>
+          <a href="#uslugi" class="btn btn--outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Zobacz usługi
+          </a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="hero__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Izba Notarialna w&nbsp;Rzeszowie
+          </div>
+          <div class="hero__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Pon–Czw 9–17, Wt 10–18, Pt 9–15
+          </div>
+          <div class="hero__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ul.&nbsp;3&nbsp;Maja 11/12, Rzeszów
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS — "Co dostajesz" -->
+    <section class="benefits" id="korzysci">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Dlaczego my</span>
+          <h2 class="section-title">Pewność i bezpieczeństwo<br>każdej czynności notarialnej</h2>
+          <p class="section-subtitle">Łączymy doświadczenie z indywidualnym podejściem, by każda wizyta w kancelarii była sprawna i komfortowa.</p>
+        </div>
+
+        <div class="bento reveal-stagger">
+          <div class="bento__card reveal" style="--i:0">
+            <div class="bento__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="bento__title">Bezpieczeństwo obrotu</h3>
+            <p class="bento__text">Każda czynność notarialna chroni interesy wszystkich stron oraz osób trzecich, zgodnie z przepisami prawa.</p>
+          </div>
+
+          <div class="bento__card reveal" style="--i:1">
+            <div class="bento__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="bento__title">Indywidualne podejście</h3>
+            <p class="bento__text">Usługi dopasowane do konkretnych potrzeb — bez szablonów. Każdy Klient otrzymuje pełną uwagę i czas.</p>
+          </div>
+
+          <div class="bento__card reveal" style="--i:2">
+            <div class="bento__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="bento__title">Sprawna obsługa</h3>
+            <p class="bento__text">Elastyczne godziny pracy i możliwość szybkiego umówienia wizyty — również telefonicznie lub mailowo.</p>
+          </div>
+
+          <div class="bento__card reveal" style="--i:3">
+            <div class="bento__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="bento__title">Centrum Rzeszowa</h3>
+            <p class="bento__text">Kancelaria mieści się na ul. 3 Maja, naprzeciwko NBP — z łatwym dostępem do parkingów w okolicy.</p>
+          </div>
+
+          <div class="bento__card reveal" style="--i:4">
+            <div class="bento__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="bento__title">Transparentne koszty</h3>
+            <p class="bento__text">Wynagrodzenie ustalane z góry, przed dokonaniem czynności — zgodnie z rozporządzeniem Ministra Sprawiedliwości.</p>
+          </div>
+
+          <div class="bento__card reveal" style="--i:5">
+            <div class="bento__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="bento__title">Czynności poza kancelarią</h3>
+            <p class="bento__text">W uzasadnionych przypadkach dokonujemy czynności notarialnych w miejscu wskazanym przez Klienta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES — Modular Bento Grid -->
+    <section class="services" id="uslugi">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Zakres usług</span>
+          <h2 class="section-title">Czynności notarialne</h2>
+          <p class="section-subtitle">Pełen zakres usług notarialnych — od aktów notarialnych po poświadczenia i akty dziedziczenia.</p>
+        </div>
+
+        <div class="services-grid reveal-stagger">
+          <!-- 1 -->
+          <div class="service-card reveal" style="--i:0">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3 class="service-card__title">Akty notarialne</h3>
+            <p class="service-card__text">Umowy sprzedaży nieruchomości, darowizny, zamiany, działu spadku, podziału majątku wspólnego i inne.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+
+          <!-- 2 -->
+          <div class="service-card reveal" style="--i:1">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
+            </div>
+            <h3 class="service-card__title">Poświadczenia dziedziczenia</h3>
+            <p class="service-card__text">Akty poświadczenia dziedziczenia z mocą prawomocnych postanowień sądowych — szybsza alternatywa dla sądu.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+
+          <!-- 3 -->
+          <div class="service-card reveal" style="--i:2">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="service-card__title">Hipoteki</h3>
+            <p class="service-card__text">Oświadczenia o ustanowieniu hipoteki, zabezpieczenia kredytów i zobowiązań na nieruchomościach.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+
+          <!-- 4 -->
+          <div class="service-card reveal" style="--i:3">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="service-card__title">Testamenty</h3>
+            <p class="service-card__text">Testamenty notarialne, w tym testamenty windykacyjne — pewność prawna Twojej ostatniej woli.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+
+          <!-- 5 -->
+          <div class="service-card reveal" style="--i:4">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="service-card__title">Intercyzy i umowy majątkowe</h3>
+            <p class="service-card__text">Umowy majątkowe małżeńskie, rozdzielność majątkowa i podziały majątku wspólnego.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+
+          <!-- 6 -->
+          <div class="service-card reveal" style="--i:5">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            </div>
+            <h3 class="service-card__title">Pełnomocnictwa i poświadczenia</h3>
+            <p class="service-card__text">Pełnomocnictwa notarialne, poświadczenia podpisów, zgodności kopii z oryginałem i daty pewnej.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+
+          <!-- 7 -->
+          <div class="service-card reveal" style="--i:6">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3 class="service-card__title">Oświadczenia spadkowe</h3>
+            <p class="service-card__text">Przyjęcie lub odrzucenie spadku, oświadczenia o poddaniu się egzekucji — bez konieczności wizyty w sądzie.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+
+          <!-- 8 -->
+          <div class="service-card reveal" style="--i:7">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="service-card__title">Sprzedaż nieruchomości</h3>
+            <p class="service-card__text">Umowy sprzedaży gruntów, lokali mieszkalnych, spółdzielczych własnościowych praw do lokali.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+
+          <!-- 9 -->
+          <div class="service-card reveal" style="--i:8">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <h3 class="service-card__title">Inne czynności notarialne</h3>
+            <p class="service-card__text">Depozyt notarialny, protesty weksli, wypisy i odpisy — pełen zakres czynności przewidzianych prawem.</p>
+            <a href="#kontakt" class="service-card__link">Zapytaj o szczegóły <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="o-kancelarii">
+      <div class="container">
+        <div class="about__grid">
+          <div class="reveal">
+            <span class="about__label">O kancelarii</span>
+            <h2 class="about__title">Doświadczenie i zaufanie<br>od 2021 roku w Rzeszowie</h2>
+            <p class="about__text">
+              Kancelaria Notarialna Notariusz Agaty Kret-Paprockiej mieści się w centrum Rzeszowa,
+              na II piętrze kamienicy przy ul.&nbsp;3&nbsp;Maja 11/12, naprzeciwko Narodowego Banku Polskiego.
+            </p>
+            <p class="about__text">
+              Jako członek Izby Notarialnej w Rzeszowie, zapewniam pełne bezpieczeństwo prawne
+              dokonywanych czynności. Każdy Klient traktowany jest indywidualnie — z uwagą,
+              cierpliwością i&nbsp;profesjonalizmem.
+            </p>
+
+            <div class="about__stats">
+              <div class="stat">
+                <div class="stat__number">5+</div>
+                <div class="stat__label">Lat doświadczenia</div>
+              </div>
+              <div class="stat">
+                <div class="stat__number">1000+</div>
+                <div class="stat__label">Obsłużonych Klientów</div>
+              </div>
+              <div class="stat">
+                <div class="stat__number">100%</div>
+                <div class="stat__label">Pozytywnych opinii</div>
+              </div>
+              <div class="stat">
+                <div class="stat__number">9+</div>
+                <div class="stat__label">Kategorii usług</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal" style="--i:1">
+            <div class="about__photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Zdjęcie kancelarii / notariusz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="opinie">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Opinie Klientów</span>
+          <h2 class="section-title">Zaufanie potwierdzone opiniami</h2>
+        </div>
+
+        <div class="testimonials-grid reveal-stagger">
+          <div class="testimonial reveal" style="--i:0">
+            <div class="testimonial__stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial__text">„Bardzo profesjonalnie i życzliwie. Pani Notariusz wytłumaczyła wszystko w przystępny sposób. Gorąco polecam!"</p>
+            <span class="testimonial__author">— Klient Google Maps</span>
+          </div>
+
+          <div class="testimonial reveal" style="--i:1">
+            <div class="testimonial__stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial__text">„Błyskawiczna obsługa na wysokim poziomie. Wszystko zostało przygotowane terminowo, bez zbędnych formalności."</p>
+            <span class="testimonial__author">— Klient Google Maps</span>
+          </div>
+
+          <div class="testimonial reveal" style="--i:2">
+            <div class="testimonial__stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial__text">„Polecam Kancelarię — miła atmosfera, rzeczowe podejście i pełen profesjonalizm. Na pewno wrócę."</p>
+            <span class="testimonial__author">— Klient Google Maps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ — Quick answers -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Najczęściej zadawane pytania</span>
+          <h2 class="section-title">Szybkie odpowiedzi</h2>
+          <p class="section-subtitle">Nie znalazłeś odpowiedzi? Zadzwoń lub napisz — chętnie pomożemy.</p>
+        </div>
+
+        <div class="faq-grid reveal-stagger">
+          <div class="faq-item reveal" style="--i:0">
+            <button class="faq-item__q" aria-expanded="false">
+              Jakie dokumenty potrzebuję do aktu notarialnego?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" role="region">
+              <div class="faq-item__a-inner">
+                Rodzaj dokumentów zależy od typu czynności. W przypadku sprzedaży nieruchomości zwykle potrzebne są: dowód osobisty, odpis księgi wieczystej, podstawa nabycia (np. akt notarialny, postanowienie sądu) oraz zaświadczenia z urzędu gminy. Prosimy o kontakt — przygotujemy indywidualną listę dokumentów.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" style="--i:1">
+            <button class="faq-item__q" aria-expanded="false">
+              Ile kosztuje wizyta u notariusza?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" role="region">
+              <div class="faq-item__a-inner">
+                Wynagrodzenie notariusza (taksa notarialna) ustalane jest indywidualnie przed dokonaniem czynności. Maksymalne stawki reguluje rozporządzenie Ministra Sprawiedliwości. Do taksy doliczany jest podatek VAT 23%. Skontaktuj się z nami — podamy dokładny koszt po opisaniu sprawy.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" style="--i:2">
+            <button class="faq-item__q" aria-expanded="false">
+              Czy notariusz może przyjechać do mnie?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" role="region">
+              <div class="faq-item__a-inner">
+                Tak, w uzasadnionych przypadkach (np. choroba, niepełnosprawność) notariusz może dokonać czynności poza kancelarią, zgodnie z ustawą Prawo o notariacie. Prosimy o wcześniejszy kontakt w celu ustalenia szczegółów.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" style="--i:3">
+            <button class="faq-item__q" aria-expanded="false">
+              Czym różni się akt poświadczenia dziedziczenia od postanowienia sądu?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" role="region">
+              <div class="faq-item__a-inner">
+                Akt poświadczenia dziedziczenia sporządzony przez notariusza ma taką samą moc prawną jak prawomocne postanowienie sądu o stwierdzeniu nabycia spadku. Zaletą jest znacznie krótszy czas — zwykle akt można sporządzić w ciągu jednej wizyty, podczas gdy postępowanie sądowe trwa tygodnie lub miesiące.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" style="--i:4">
+            <button class="faq-item__q" aria-expanded="false">
+              Jak umówić się na wizytę?
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__a" role="region">
+              <div class="faq-item__a-inner">
+                Najszybciej telefonicznie: <strong>880 460 333</strong> lub mailowo: <strong>kancelaria@kretpaprocka.pl</strong>. Można też skorzystać z formularza kontaktowego na stronie. Odpowiadamy zwykle w ciągu kilku godzin roboczych.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT + HOURS -->
+    <section class="contact" id="kontakt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Kontakt</span>
+          <h2 class="section-title">Umów wizytę w kancelarii</h2>
+          <p class="section-subtitle">Zadzwoń, napisz lub wypełnij formularz — odpowiemy możliwie szybko.</p>
+        </div>
+
+        <div class="contact__grid">
+          <div>
+            <!-- Hours -->
+            <div class="hours reveal">
+              <h3 class="hours__title">Godziny otwarcia</h3>
+              <div class="hours__row">
+                <span class="hours__day">Poniedziałek</span>
+                <span class="hours__time">9:00 — 17:00</span>
+              </div>
+              <div class="hours__row">
+                <span class="hours__day">Wtorek</span>
+                <span class="hours__time">10:00 — 18:00</span>
+              </div>
+              <div class="hours__row">
+                <span class="hours__day">Środa</span>
+                <span class="hours__time">9:00 — 17:00</span>
+              </div>
+              <div class="hours__row">
+                <span class="hours__day">Czwartek</span>
+                <span class="hours__time">9:00 — 17:00</span>
+              </div>
+              <div class="hours__row">
+                <span class="hours__day">Piątek</span>
+                <span class="hours__time">9:00 — 15:00</span>
+              </div>
+              <div class="hours__row">
+                <span class="hours__day">Sobota – Niedziela</span>
+                <span class="hours__time">Nieczynne</span>
+              </div>
+              <div class="hours__note">
+                Inne terminy możliwe po wcześniejszym uzgodnieniu telefonicznym.
+              </div>
+            </div>
+
+            <!-- Contact cards -->
+            <div class="contact-info reveal" style="margin-top: 1.5rem;">
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-card__label">Telefon</div>
+                  <div class="contact-card__value"><a href="tel:+48880460333">+48 880 460 333</a></div>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="contact-card__label">E-mail</div>
+                  <div class="contact-card__value"><a href="mailto:kancelaria@kretpaprocka.pl">kancelaria@kretpaprocka.pl</a></div>
+                </div>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="contact-card__label">Adres</div>
+                  <div class="contact-card__value">ul. 3 Maja 11/12<br>35-030 Rzeszów<br><small style="font-weight:400; color: var(--gray-600)">II piętro, naprzeciwko NBP</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="form-section reveal">
+            <h3 class="form-section__title">Napisz do nas</h3>
+            <p class="form-section__sub">Opisz sprawę — odpowiemy z wyceną i listą potrzebnych dokumentów.</p>
+
+            <form id="contactForm" action="#" method="POST" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Imię i nazwisko</label>
+                  <input type="text" id="name" name="name" placeholder="Jan Kowalski" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Telefon</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+48 ..." autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="jan@email.pl" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="service">Rodzaj czynności</label>
+                <select id="service" name="service">
+                  <option value="">Wybierz...</option>
+                  <option value="akt-notarialny">Akt notarialny (sprzedaż, darowizna)</option>
+                  <option value="poswiadczenie-dziedziczenia">Poświadczenie dziedziczenia</option>
+                  <option value="testament">Testament</option>
+                  <option value="hipoteka">Hipoteka</option>
+                  <option value="intercyza">Intercyza / umowa majątkowa</option>
+                  <option value="pelnomocnictwo">Pełnomocnictwo</option>
+                  <option value="poswiadczenie">Poświadczenie podpisu / kopii</option>
+                  <option value="inne">Inne</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Opis sprawy</label>
+                <textarea id="message" name="message" placeholder="Krótko opisz czego dotyczy czynność..." rows="4"></textarea>
+              </div>
+
+              <button type="submit" class="btn--submit">
+                Wyślij zapytanie
+              </button>
+
+              <p style="font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 0.75rem; text-align: center;">
+                Wysyłając formularz wyrażasz zgodę na przetwarzanie danych osobowych w celu obsługi zapytania.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="map-section">
+      <div class="map-section__inner">
+        <div class="map-section__info">
+          <h3 class="map-section__title">Jak do nas trafić</h3>
+          <p class="map-section__address">
+            ul. 3 Maja 11, lok. 12<br>
+            35-030 Rzeszów<br>
+            II piętro kamienicy naprzeciwko NBP
+          </p>
+          <div class="map-section__parking">
+            <strong>Parkingi w pobliżu</strong>
+            ul. Dymnickiego (najbliżej wejścia do kamienicy),
+            ul. Jagiellońska oraz Plac Farny
+          </div>
+          <a href="https://maps.google.com/?q=Kancelaria+Notarialna+Agata+Kret-Paprocka+3+Maja+11+Rzeszów" target="_blank" rel="noopener" class="btn btn--primary" style="align-self: flex-start;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Otwórz w Google Maps
+          </a>
+        </div>
+        <iframe
+          class="map-embed"
+          title="Lokalizacja Kancelarii Notarialnej Agata Kret-Paprocka na mapie"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.5!2d22.003!3d50.037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb5a6e5c8a1d%3A0x0!2sul.+3+Maja+11%2C+35-030+Rzesz%C3%B3w!5e0!3m2!1spl!2spl!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2 class="cta-banner__title">Potrzebujesz notariusza w Rzeszowie?</h2>
+        <p class="cta-banner__sub">Zadzwoń lub napisz — umówimy wizytę w dogodnym terminie.</p>
+        <div class="cta-banner__actions">
+          <a href="tel:+48880460333" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Zadzwoń: 880 460 333
+          </a>
+          <a href="mailto:kancelaria@kretpaprocka.pl" class="btn btn--outline" style="border-color: rgba(255,255,255,0.3); color: var(--white);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Napisz e-mail
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="/" class="logo">
+            <svg class="logo__icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:36px;height:36px">
+              <circle cx="22" cy="22" r="20" stroke="#c9a84c" stroke-width="1.5"/>
+              <circle cx="22" cy="22" r="15" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
+              <path d="M22 10 L22 34" stroke="#c9a84c" stroke-width="1.2"/>
+              <path d="M16 16 L22 10 L28 16" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
+              <path d="M15 28 L29 28" stroke="#c9a84c" stroke-width="1"/>
+              <path d="M17 31 L27 31" stroke="#c9a84c" stroke-width="0.8"/>
+              <text x="22" y="24" text-anchor="middle" fill="#c9a84c" font-family="serif" font-size="6" font-weight="bold">N</text>
+            </svg>
+            <div class="logo__text">
+              <span class="logo__name">Agata Kret-Paprocka</span>
+              <span class="logo__sub">Kancelaria Notarialna</span>
+            </div>
+          </a>
+          <p class="footer__text" style="margin-top: 1rem;">
+            Profesjonalna obsługa czynności notarialnych w centrum Rzeszowa.
+            Członek Izby Notarialnej w Rzeszowie.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Usługi</h4>
+          <div class="footer__links">
+            <a href="#uslugi">Akty notarialne</a>
+            <a href="#uslugi">Poświadczenia dziedziczenia</a>
+            <a href="#uslugi">Testamenty</a>
+            <a href="#uslugi">Hipoteki</a>
+            <a href="#uslugi">Pełnomocnictwa</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Informacje</h4>
+          <div class="footer__links">
+            <a href="#o-kancelarii">O kancelarii</a>
+            <a href="#faq">Najczęstsze pytania</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="#kontakt">Cennik</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Kontakt</h4>
+          <div class="footer__links">
+            <a href="tel:+48880460333">+48 880 460 333</a>
+            <a href="mailto:kancelaria@kretpaprocka.pl">kancelaria@kretpaprocka.pl</a>
+            <a>ul. 3 Maja 11/12</a>
+            <a>35-030 Rzeszów</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2025 Kancelaria Notarialna Notariusz Agata Kret-Paprocka. NIP: 8672176560</span>
+        <span>Izba Notarialna w Rzeszowie</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       JAVASCRIPT — Minimal, purposeful
+       ======================================== -->
+  <script>
+    // Mobile menu toggle
+    (function() {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const overlay = document.querySelector('.overlay');
+      const mobileLinks = mobileNav.querySelectorAll('a');
+
+      function toggleMenu() {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        overlay.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        mobileNav.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      function closeMenu() {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', toggleMenu);
+      overlay.addEventListener('click', closeMenu);
+      mobileLinks.forEach(function(link) { link.addEventListener('click', closeMenu); });
+    })();
+
+    // Header scroll effect
+    (function() {
+      var header = document.querySelector('.header');
+      var scrolled = false;
+      window.addEventListener('scroll', function() {
+        var shouldBeScrolled = window.scrollY > 50;
+        if (shouldBeScrolled !== scrolled) {
+          scrolled = shouldBeScrolled;
+          header.classList.toggle('scrolled', scrolled);
+        }
+      }, { passive: true });
+    })();
+
+    // Scroll reveal — Intersection Observer (performant)
+    (function() {
+      if (!('IntersectionObserver' in window)) {
+        // Fallback: show all
+        document.querySelectorAll('.reveal').forEach(function(el) {
+          el.classList.add('visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    // FAQ accordion
+    (function() {
+      document.querySelectorAll('.faq-item__q').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var item = btn.closest('.faq-item');
+          var isOpen = item.classList.contains('open');
+
+          // Close all
+          document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle current
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
+    // Form submission feedback (demo)
+    (function() {
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var btn = form.querySelector('.btn--submit');
+        var originalText = btn.textContent;
+        btn.textContent = 'Wysyłanie...';
+        btn.disabled = true;
+
+        // Simulate send
+        setTimeout(function() {
+          btn.textContent = 'Wysłano!';
+          btn.style.background = '#2ecc71';
+          setTimeout(function() {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+            form.reset();
+          }, 2500);
+        }, 1200);
+      });
+    })();
+  </script>
+
+</body>
+</html>
